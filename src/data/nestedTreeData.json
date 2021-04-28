@@ -1,0 +1,63 @@
+{
+  "notes": [
+    {
+      "id": 1,
+      "title": "Calls",
+      "text": "John: 013 5711 1317\nMary: 011 2358 1321",
+      "top": 76,
+      "left": 80,
+      "parentId": 0,
+      "groupId": 0,
+      "color": "blue",
+      "zIndex": 110
+    },
+    {
+      "id": 2,
+      "title": "Odd Array Occurrences",
+      "top": 40,
+      "text": "console.log(solution(tests[673436396, 500111222, 500111222, 42, 42]));\n\nfunction solution(A) {\n  let result = 0;\n\n  A.forEach((element) => {\n    result ^= element;\n  });\n\n  return result;\n}",
+      "left": 10,
+      "parentId": 3,
+      "groupId": 0,
+      "color": "yellow",
+      "zIndex": 102
+    },
+    {
+      "id": 3,
+      "title": "Binary Gap",
+      "top": 40,
+      "text": "function solution(N) {\n  const bin = numberToBinary(N);\n\n  let zeroCount = 0;\n  let longestGap = 0;\n\n  for (let i = 0; i < bin.length; i++) {\n    const position = Number.parseInt(bin[i]);\n\n    if (!position) {\n      zeroCount++;\n    }\n    if (position) {\n      if (zeroCount > longestGap) longestGap = zeroCount;\n      zeroCount = 0;\n    }\n  }\n\n  return longestGap;\n}",
+      "left": 10,
+      "parentId": 4,
+      "groupId": 0,
+      "color": "green",
+      "zIndex": 101
+    },
+    {
+      "id": 4,
+      "title": "Perm Missing Element",
+      "top": 77,
+      "text": "function solution(A) {\n  let actualSum = A.reduce((a, b) => {\n    return (a += b);\n  }, 0);\n\n  let maxNumber = A.length + 1;\n\n  //sum to x equation : )\n  let expectedSum = (maxNumber * (maxNumber + 1)) / 2;\n\n  return expectedSum - actualSum;\n}",
+      "left": 444,
+      "parentId": 0,
+      "groupId": 0,
+      "color": "purple",
+      "zIndex": 108
+    },
+    {
+      "id": 5,
+      "title": "Get on the way home",
+      "top": 446.1875,
+      "text": "Chicken\n Bread\n Milk\nCheese\nOnions\nTomatoes",
+      "left": 94.1875,
+      "parentId": 0,
+      "groupId": 0,
+      "color": "yellow",
+      "zIndex": 105
+    }
+  ],
+  "showText": false,
+  "showTitle": false,
+  "showTextId": -1,
+  "currentZIndex": 100
+}
