@@ -2,17 +2,20 @@ import React from "react";
 import { useDrop } from "react-dnd";
 import styled from "styled-components";
 import { useAppState } from "../AppStateContext";
+import { ImBin } from "react-icons/im";
+import styles from "./Bin.Module.css";
 
 const RubbishBin = styled.div`
   width: 50px;
   height: 50px;
   font-size: 60px;
-  bottom: 60px;
-  right: 60px;
+  bottom: 50px;
+  right: 50px;
   position: absolute;
+  color: red;
   transition: all 0.2s ease-in-out;
   ${(props) => !props.isOver} {
-    transform: scale(1.2);
+    transform: scale(1.25);
   }
 `;
 
@@ -58,7 +61,7 @@ function Bin() {
   return (
     <>
       <RubbishBin ref={drop} isOver={isOver}>
-        🗑️
+        <ImBin className={styles.bin} />
       </RubbishBin>
     </>
   );

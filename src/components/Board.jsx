@@ -6,6 +6,7 @@ import Bin from "./Bin";
 import { useAppState } from "../AppStateContext";
 import styled, { createGlobalStyle } from "styled-components";
 import board from "../assets/img/board-opt.jpg";
+import { IoAddCircle } from "react-icons/io5";
 
 const BodyStyle = createGlobalStyle`
     body {
@@ -28,23 +29,14 @@ const BoardWrapper = styled.div`
   border-image-source: linear-gradient(to left, #c99016, #815a07);
 `;
 
-const AddButton = styled.button`
-  width: 60px;
-  height: 60px;
+const AddButton = styled.div`
   position: absolute;
   left: 30px;
-  font-size: 50px;
   bottom: 30px;
-  border-radius: 50pc;
-  border: 0;
-  line-height: 50px;
-  color: rgba(109, 171, 233, 0.66);
-  background-color: rgb(49, 103, 157);
-  box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, 0.3);
   transition: all 0.2s ease-in-out;
 
   &:hover {
-    transform: scale(1.12);
+    transform: scale(1.2);
   }
 `;
 
@@ -128,7 +120,7 @@ function Board() {
         left,
         title: title ? title : "untitled",
         color: "blue",
-        zIndex: draft.currentZIndex,
+        zIndex: 10000,
       });
     });
   };
@@ -147,7 +139,15 @@ function Board() {
         <BoardWrapper ref={boardRef} onClick={handleBoardClick}>
           <Notes data={noteState.notes} />
           <Bin />
-          <AddButton onClick={() => addNewNote("new note...")}>+</AddButton>
+          <AddButton>
+            <IoAddCircle
+              onClick={() => addNewNote("new note...")}
+              style={{
+                color: " rgb(42, 145, 11)",
+                fontSize: 60,
+              }}
+            />
+          </AddButton>
         </BoardWrapper>
       </div>
     </>
