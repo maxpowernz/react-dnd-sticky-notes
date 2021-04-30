@@ -9,8 +9,8 @@ const NoteWrapper = styled.div`
   ${(props) => props.color && `background: ${props.color}`};
   z-index: ${(props) => props.zIndex};
   cursor: grab;
-  height: 300px;
-  width: 250px;
+  height: 350px;
+  width: 300px;
   position: absolute;
 
   box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, 0.7);
@@ -24,10 +24,10 @@ const NoteText = styled.div`
   background-color: ${(props) => props.color};
   font-family: "Caveat", cursive;
   font-size: 1.5rem;
-  padding: 0.5rem;
   white-space: pre-line;
   border-bottom: 0.5rem solid transparent;
   border-right: 0.5rem solid transparent;
+  ${(props) => (props.showText ? `padding: 0; ` : `padding: 0.5rem`)}
 `;
 
 const NoteTextArea = styled.textarea`
@@ -36,15 +36,15 @@ const NoteTextArea = styled.textarea`
   background: none;
   height: 100%;
   outline: none;
-  font: "arial";
+  font-family: sans-serif;
   font-size: 1rem;
   padding: 0.5rem;
 `;
 
 const ColorSelectorWrapper = styled.div`
   position: absolute;
-  height: 15px;
-  width: 60px;
+  height: 18px;
+  width: 72px;
   bottom: 0;
   right: 0;
   display: flex;
@@ -230,7 +230,8 @@ function Note({ children, note, parent }) {
           color={colors[note.color]}
           isOver={isOver}
           className="code"
-          onClick={(e) => handleTextClick(e)}>
+          onClick={(e) => handleTextClick(e)}
+          showText={noteState.showText && id === noteState.showTextId}>
           {noteState.showText && id === noteState.showTextId ? (
             <NoteTextArea
               onChange={(e) => handleTextChange(e, "text")}
