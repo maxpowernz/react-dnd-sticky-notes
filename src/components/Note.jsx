@@ -25,8 +25,8 @@ const NoteText = styled.div`
   font-family: "Caveat", cursive;
   font-size: 1.5rem;
   white-space: pre-line;
-  border-bottom: 0.5rem solid transparent;
-  border-right: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+  border-right: 0.5rem solid transparent;
   ${(props) => (props.showText ? `padding: 0; ` : `padding: 0.5rem`)}
 `;
 
